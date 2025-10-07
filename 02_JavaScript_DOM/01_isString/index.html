@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>isString</title>
+</head>
+<body>
+  <pre>
+    function isString(obj) {
+        return String(obj) === obj;
+    }
+
+    const obj1 = {"123": 123};
+    const obj2 = 123;
+    const obj3 = "Yes";
+    const obj4 = true;
+    const obj5 = String(obj1) + obj2;
+
+    console.log(isString(obj1)); // false
+    console.log(isString(obj2)); // false
+    console.log(isString(obj3)); // true
+    console.log(isString(obj4)); // false
+    console.log(isString(obj5)); // true
+  </pre>
+
+  <a href="https://google.com" target="_blank">
+    <button>Open code</button>
+  </a>
+  
+</body>
+</html>
