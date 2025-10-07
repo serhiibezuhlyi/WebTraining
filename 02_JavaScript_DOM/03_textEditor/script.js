@@ -187,7 +187,9 @@ document.querySelector("#editButton").addEventListener('click', () => {
 
 });
 
-document.querySelector('#space').addEventListener('click', () => {
-    clearSelection();
+document.querySelector('#space').addEventListener('click', (e) => {
+    if (e.target === e.currentTarget) {
+        clearSelection();
+    }
 });
 
