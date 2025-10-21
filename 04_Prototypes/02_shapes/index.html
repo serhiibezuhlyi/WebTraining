@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>promiseAny</title>
+</head>
+<body>
+    <pre>
+    function Shape(){}
+    Shape.prototype.area = function(){return 0}
+
+    function Elipse(a, b){
+        this.a = a,
+        this.b = b
+    }
+
+    Elipse.prototype = Object.create(Shape.prototype)
+    Elipse.prototype.constructor = Elipse
+    Elipse.prototype.area = function(){return Math.PI*this.a*this.b}
+
+    function Circle(r){
+        this.r = r
+    }
+
+    Circle.prototype = Object.create(Shape.prototype)
+    Circle.prototype.constructor = Circle
+    Circle.prototype.area = function(){return Math.PI*this.r*this.r}
+
+    a = new Shape();
+    b = new Elipse(1, 2);
+    c = new Circle(5);
+
+    console.log(a.area()); // 0
+    console.log(b.area()); // 6.283185307179586
+    console.log(c.area()); // 78.53981633974483
+    </pre>
+  
+    <a href="https://github.com/serhiibezuhlyi/WebTraining/tree/main/04_Prototypes/02_shapes" target="_blank">
+        <button>Open code</button>
+    </a>
+
+</body>
+<script src="script.js"></script>
+</html>

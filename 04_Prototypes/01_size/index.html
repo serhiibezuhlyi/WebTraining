@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>size</title>
+</head>
+<body>
+    <pre>
+    Object.prototype.size = function() {
+        return Object.keys(this).filter((key) => typeof this[key] != 'function').length
+    }
+
+
+    testCase1 = {
+        its: 'Will',
+        be: "size",
+        three: "!"
+    }
+
+    testCase2 = {
+        skip: function(){console.log('haha')},
+        this: "will be"
+    }
+
+    testCase3 = {
+        zero: () => {console.log("empty")}
+    }
+
+    console.log(testCase1.size()) // 3
+    console.log(testCase2.size()) // 1
+    console.log(testCase3.size()) // 0
+
+    </pre>
+  
+    <a href="https://github.com/serhiibezuhlyi/WebTraining/tree/main/04_Prototypes/01_size" target="_blank">
+        <button>Open code</button>
+    </a>
+
+</body>
+<script src="script.js"></script>
+</html>
