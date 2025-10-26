@@ -1,0 +1,13 @@
+{
+  "Servers": {
+    "1": {
+      "Name": "Local MySQL",
+      "Group": "Servers",
+      "Host": "localhost",
+      "Port": 3306,
+      "MaintenanceDB": "db",
+      "Username": "test",
+      "SSLMode": "prefer"
+    }
+  }
+}
